@@ -116,12 +116,12 @@ namespace CodeFirstApproach.Controllers
             return View(stdData);
         }
 
-        [HttpPost,ActionName ("Delete")]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult>DeleteConfirmed (int? id)
+        public async Task<IActionResult> DeleteConfirmed(int? id)
         {
             var stdData = await studentDB.Students.FindAsync(id);
-            if(stdData != null)
+            if (stdData != null)
             {
                 studentDB.Students.Remove(stdData);
 
@@ -130,7 +130,8 @@ namespace CodeFirstApproach.Controllers
             TempData["delete_success"] = "Deleted...";
             return RedirectToAction("Index", "Home");
         }
-        
+
+
 
 
 
